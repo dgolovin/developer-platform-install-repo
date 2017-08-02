@@ -2,6 +2,158 @@
 Hash: SHA1
 
 {
+  "devstudio": {
+    "name": "Red Hat JBoss Developer Studio",
+    "description": "A certified Eclipse-based integrated development environment (IDE)",
+    "vendor": "Red Hat, Inc.",
+    "modulePath": "model/devstudio",
+    "installable": true,
+    "detectable": false,
+    "bundle": "yes",
+    "targetFolderName": "developer-studio",
+    "installAfter": "jdk",
+    "dmUrl": "https://devstudio.redhat.com/11/snapshots/builds/devstudio.product_master/latest/all/",
+    "url": "https://devstudio.redhat.com/11/snapshots/builds/devstudio.product_master/latest/all/",
+    "fileName": "devstudio-11.0.0.GA-installer-standalone.jar",
+    "sha256sum": "",
+    "version": "11.0.0.GA",
+    "useDownload": true,
+    "requires": ["jdk"]
+  },
+  "fusetools": {
+    "name": "Red Hat JBoss Fuse Tooling",
+    "description": "A certified Eclipse-based integrated development environment (IDE) for Fuse",
+    "vendor": "Red Hat, Inc.",
+    "modulePath": "model/devstudio",
+    "installable": true,
+    "detectable": false,
+    "bundle": "no",
+    "targetFolderName": "developer-studio",
+    "installAfter": "devstudio",
+    "dmUrl": "https://devstudio.redhat.com/11/snapshots/builds/devstudio.product_master/latest/all/",
+    "url": "https://devstudio.redhat.com/11/snapshots/builds/devstudio.product_master/latest/all/",
+    "fileName": "devstudio-11.0.0.AM1-installer-standalone.jar",
+    "sha256sum": "",
+    "version": "11.0.0.AM2",
+    "additionalLocation": "",
+    "additionalIus": "com.jboss.devstudio.fuse.feature.feature.group",
+    "useDownload": false,
+    "defaultOption": "detected",
+    "requires": ["devstudio"]
+  },
+  "fuseplatform": {
+    "name": "Red Hat JBoss Fuse on JBoss EAP",
+    "description": "An agile, lightweight and modern integration platform (installed on JBoss EAP)",
+    "vendor": "Red Hat, Inc.",
+    "modulePath": "model/jbossfuse",
+    "bundle": "no",
+    "targetFolderName": "jboss-fuse-eap",
+    "installAfter": "jdk",
+    "requires": "jdk",
+    "version": "6.3.0.GA",
+    "sha256sum": "",
+    "file": {
+      "platform": {
+        "dmUrl": "https://developers.redhat.com/download-manager/jdf/content/origin/files/sha256/84/847cd3a03bc3ae41b1b997b2bae34dadaa8a8fee4b45dd70de8b53bb32f953dd/fuse-eap-installer-6.3.0.redhat-187.jar?workflow=direct",
+        "url": "http://download-node-02.eng.bos.redhat.com/released/JBossFuse/6.3.0/fuse-eap-installer-6.3.0.redhat-187.jar",
+        "fileName": "fuse-eap-installer-6.3.0.redhat-187.jar",
+        "sha256sum": "847cd3a03bc3ae41b1b997b2bae34dadaa8a8fee4b45dd70de8b53bb32f953dd"
+      },
+      "eap": {
+        "dmUrl": "https://developers.redhat.com/download-manager/jdf/file/jboss-eap-6.4.0.GA-installer.jar?workflow=direct",
+        "url": "http://download-node-02.eng.bos.redhat.com/released/JBEAP-6/6.4.0/jboss-eap-6.4.0-installer.jar",
+        "fileName": "jboss-eap-6.4.0.GA-installer.jar",
+        "sha256sum": "363ab89d81b1f496da3e745f6cac7f9456d76bd4a9d1908c597f514232f84c0a"
+      }
+    },
+    "useDownload": true,
+    "defaultOption": "detected",
+    "requires": ["jdk"]
+  },
+  "fuseplatformkaraf": {
+    "name": "Red Hat JBoss Fuse on Apache Karaf",
+     "description": "An agile, lightweight and modern integration platform (installed on Apache Karaf package)",
+     "vendor": "Red Hat, Inc.",
+     "modulePath": "model/jbossfusekaraf",
+     "bundle": "no",
+     "targetFolderName": "jboss-fuse-karaf",
+     "installAfter": "jdk",
+     "requires": "jdk",
+     "version": "6.3.0.GA",
+     "dmUrl": "http://download-node-02.eng.bos.redhat.com/released/JBossFuse/6.3.0/jboss-fuse-karaf-6.3.0.redhat-187.zip",
+     "url": "http://download-node-02.eng.bos.redhat.com/released/JBossFuse/6.3.0/jboss-fuse-karaf-6.3.0.redhat-187.zip",
+     "fileName": "jboss-fuse-karaf-6.3.0.redhat-187.zip",
+     "sha256sum": "4ef481bb22f4a9c688d03f46374917e0f2548229f94ebd817c33817baf203b0c",
+     "useDownload": true,
+     "defaultOption": "detected",
+     "requires": ["jdk"]
+  },
+  "jbosseap": {
+    "name": "Red Hat JBoss Enterprise Application Platform",
+    "description": "Java EE 7 compliant application server built on open standards",
+    "vendor": "Red Hat, Inc.",
+    "modulePath": "model/jbosseap",
+    "installable": true,
+    "detectable": false,
+    "bundle": "no",
+    "targetFolderName": "jbosseap",
+    "installAfter": "jdk",
+    "dmUrl": "https://developers.redhat.com/download-manager/jdf/file/jboss-eap-7.0.0-installer.jar?workflow=direct",
+    "url": "http://download-node-02.eng.bos.redhat.com/released/JBEAP-7/7.0.0/jboss-eap-7.0.0-installer.jar",
+    "fileName": "jboss-eap-7.0.0-installer.jar",
+    "sha256sum": "8c4432464414ab986d0aa4c6b0faee94b797cf1f66949dd98496ca0ae54d7d35",
+    "version": "7.0.0.GA",
+    "defaultOption": "detected",
+    "requires": ["jdk"]
+  },
+  "jdk": {
+    "description": "A free and open source implementation of the Java Platform, Standard Edition (Java SE)",
+    "vendor": "Red Hat, Inc.",
+    "modulePath": "model/jdk-install",
+    "targetFolderName": "jdk8",
+    "detectable": true,
+    "platform": {
+      "win32": {
+        "name": "OpenJDK",
+        "installable": true,
+        "bundle": "yes",
+        "dmUrl": "https://developers.redhat.com/download-manager/jdf/file/java-1.8.0-openjdk-1.8.0.141-2.b16.redhat.windows.x86_64.msi?workflow=direct",
+        "url": "http://download-node-02.eng.bos.redhat.com/brewroot/packages/openjdk8-win/1.8.0.141/2.b16/win/java-1.8.0-openjdk-1.8.0.141-2.b16.redhat.windows.x86_64.msi",
+        "fileName": "java-1.8.0-openjdk-1.8.0.141-2.b16.redhat.windows.x86_64.msi",
+        "sha256sum": "03d659a682125b2d69d5b5d055e3b6a2d0dc59a453d9299f968b0324974cd205",
+        "version": "1.8.0_141",
+        "virusTotalReport": "https://virustotal.com/en/file/03d659a682125b2d69d5b5d055e3b6a2d0dc59a453d9299f968b0324974cd205/analysis/1501216078/"
+      },
+      "darwin": {
+        "name": "Oracle Java",
+        "installable": false,
+        "bundle": "no",
+        "dmUrl": "http://www.oracle.com/technetwork/java/javase/downloads/index.html",
+        "url": "http://www.oracle.com/technetwork/java/javase/downloads/index.html",
+        "fileName": "",
+        "sha256sum": "",
+        "version": "1.8.0",
+        "virusTotalReport": "",
+        "messages": {
+          "dependency": {
+            "message": "Due to licence limitations we may not install Java for you. Please install JDK version 1.8.0 downloaded from this location and restart the Installer to continue.",
+            "linkDescription": "this location"
+          }
+        }
+      },
+      "linux": {
+        "name": "OpenJDK",
+        "bundle": "yes",
+        "installable": true,
+        "dmUrl": "https://developers.redhat.com/download-manager/jdf/file/java-1.8.0-openjdk-1.8.0.141-2.b16.redhat.windows.x86_64.msi?workflow=direct",
+        "url": "http://download-node-02.eng.bos.redhat.com/brewroot/packages/openjdk8-win/1.8.0.141/2.b16/win/java-1.8.0-openjdk-1.8.0.141-2.b16.redhat.windows.x86_64.msi",
+        "fileName": "java-1.8.0-openjdk-1.8.0.141-2.b16.redhat.windows.x86_64.msi",
+        "sha256sum": "03d659a682125b2d69d5b5d055e3b6a2d0dc59a453d9299f968b0324974cd205",
+        "version": "1.8.0_141",
+        "virusTotalReport": "https://virustotal.com/en/file/03d659a682125b2d69d5b5d055e3b6a2d0dc59a453d9299f968b0324974cd205/analysis/1501216078/"
+      }
+    }
+  },
   "cdk": {
     "name": "Red Hat Container Development Kit",
     "description": "Developer Tools for Creating, Testing, and Distributing Red Hat Container-Based Applications",
@@ -41,165 +193,63 @@ Hash: SHA1
       }
     }
   },
-  "cygwin": {
-    "name": "Cygwin",
-    "description": "A distribution of popular GNU and other Open Source tools running on Microsoft Windows",
-    "vendor": "Community Project",
-    "modulePath": "model/cygwin",
-    "installable": true,
-    "detectable": true,
-    "bundle": "always",
-    "targetFolderName": "cygwin",
-    "installAfter": "virtualbox",
-    "url": "https://cygwin.com/setup-x86_64.exe",
-    "fileName": "cygwin_2.8.2.exe",
-    "sha256sum": "062ab45437fed70071dd4cf1c9d6c584f3efbb3d64d60e4cfc4e74fd6b6de214",
-    "version": "2.8.2",
-    "virusTotalReport": "https://virustotal.com/en/file/062ab45437fed70071dd4cf1c9d6c584f3efbb3d64d60e4cfc4e74fd6b6de214/analysis/",
-    "platform": {
-      "win32": {}
-    }
-  },
-  "devstudio": {
-    "name": "Red Hat JBoss Developer Studio",
-    "description": "A certified Eclipse-based integrated development environment (IDE)",
-    "vendor": "Red Hat, Inc.",
-    "modulePath": "model/devstudio",
+  "kompose": {
+    "name": "Kompose",
+    "description": "A tool to translate a Docker Compose file into Kubernetes or OpenShift resources",
+    "vendor": "Kubernetes Incubator",
+    "modulePath": "model/kompose",
     "installable": true,
     "detectable": false,
-    "bundle": "yes",
-    "targetFolderName": "developer-studio",
-    "installAfter": "jdk",
-    "dmUrl": "https://devstudio.redhat.com/11/snapshots/builds/devstudio.product_master/latest/all/",
-    "url": "https://devstudio.redhat.com/11/snapshots/builds/devstudio.product_master/latest/all/",
-    "fileName": "devstudio-11.0.0.GA-installer-standalone.jar",
-    "sha256sum": "",
-    "version": "11.0.0.GA",
-    "useDownload": true,
-    "requires": ["jdk"]
-  },
-  "fusetools": {
-    "name": "Red Hat JBoss Fuse Tooling",
-    "description": "A certified Eclipse-based integrated development environment (IDE) for Fuse",
-    "vendor": "Red Hat, Inc.",
-    "modulePath": "model/devstudio",
-    "installable": true,
-    "detectable": false,
-    "bundle": "no",
-    "targetFolderName": "developer-studio",
-    "installAfter": "devstudio",
-    "dmUrl": "https://devstudio.redhat.com/11/snapshots/builds/devstudio.product_master/latest/all/",
-    "url": "https://devstudio.redhat.com/11/snapshots/builds/devstudio.product_master/latest/all/",
-    "fileName": "devstudio-11.0.0.AM1-installer-standalone.jar",
-    "sha256sum": "",
-    "version": "11.0.0.AM2",
-    "additionalLocation": "",
-    "additionalIus": "com.jboss.devstudio.fuse.feature.feature.group",
-    "useDownload": false,
-    "requires": ["devstudio"]
-  },
-  "fuseplatform": {
-    "name": "Red Hat JBoss Fuse on JBoss EAP",
-    "description": "An agile, lightweight and modern integration platform (installed on JBoss EAP)",
-    "vendor": "Red Hat, Inc.",
-    "modulePath": "model/jbossfuse",
-    "bundle": "no",
-    "targetFolderName": "jboss-fuse-eap",
-    "installAfter": "jdk",
-    "requires": "jdk",
-    "version": "6.3.0.GA",
-    "sha256sum": "",
-    "file": {
-      "platform": {
-        "dmUrl": "https://developers.redhat.com/download-manager/jdf/content/origin/files/sha256/84/847cd3a03bc3ae41b1b997b2bae34dadaa8a8fee4b45dd70de8b53bb32f953dd/fuse-eap-installer-6.3.0.redhat-187.jar?workflow=direct",
-        "url": "http://download-node-02.eng.bos.redhat.com/released/JBossFuse/6.3.0/fuse-eap-installer-6.3.0.redhat-187.jar",
-        "fileName": "fuse-eap-installer-6.3.0.redhat-187.jar",
-        "sha256sum": "847cd3a03bc3ae41b1b997b2bae34dadaa8a8fee4b45dd70de8b53bb32f953dd"
-      },
-      "eap": {
-        "dmUrl": "https://developers.redhat.com/download-manager/jdf/file/jboss-eap-6.4.0.GA-installer.jar?workflow=direct",
-        "url": "http://download-node-02.eng.bos.redhat.com/released/JBEAP-6/6.4.0/jboss-eap-6.4.0-installer.jar",
-        "fileName": "jboss-eap-6.4.0.GA-installer.jar",
-        "sha256sum": "363ab89d81b1f496da3e745f6cac7f9456d76bd4a9d1908c597f514232f84c0a"
+    "targetFolderName": "kompose",
+    "version": "1.1.0 Technology Preview",
+    "messages": {
+      "info": {
+        "message": "For additional information and documentation visit http://kompose.io",
+        "link": "http://kompose.io",
+        "linkDescription": "http://kompose.io"
       }
     },
-    "useDownload": true,
-    "requires": ["jdk"]
-  },
-  "fuseplatformkaraf": {
-    "name": "Red Hat JBoss Fuse on Apache Karaf",
-     "description": "An agile, lightweight and modern integration platform (installed on Apache Karaf package)",
-     "vendor": "Red Hat, Inc.",
-     "modulePath": "model/jbossfusekaraf",
-     "bundle": "no",
-     "targetFolderName": "jboss-fuse-karaf",
-     "installAfter": "jdk",
-     "requires": "jdk",
-     "version": "6.3.0.GA",
-     "dmUrl": "http://download-node-02.eng.bos.redhat.com/released/JBossFuse/6.3.0/jboss-fuse-karaf-6.3.0.redhat-187.zip",
-     "url": "http://download-node-02.eng.bos.redhat.com/released/JBossFuse/6.3.0/jboss-fuse-karaf-6.3.0.redhat-187.zip",
-     "fileName": "jboss-fuse-karaf-6.3.0.redhat-187.zip",
-     "sha256sum": "4ef481bb22f4a9c688d03f46374917e0f2548229f94ebd817c33817baf203b0c",
-     "useDownload": true,
-     "requires": ["jdk"]
-  },
-  "jbosseap": {
-    "name": "Red Hat JBoss Enterprise Application Platform",
-    "description": "Java EE 7 compliant application server built on open standards",
-    "vendor": "Red Hat, Inc.",
-    "modulePath": "model/jbosseap",
-    "installable": true,
-    "detectable": false,
-    "bundle": "no",
-    "targetFolderName": "jbosseap",
-    "installAfter": "jdk",
-    "dmUrl": "https://developers.redhat.com/download-manager/jdf/file/jboss-eap-7.0.0-installer.jar?workflow=direct",
-    "url": "http://download-node-02.eng.bos.redhat.com/released/JBEAP-7/7.0.0/jboss-eap-7.0.0-installer.jar",
-    "fileName": "jboss-eap-7.0.0-installer.jar",
-    "sha256sum": "8c4432464414ab986d0aa4c6b0faee94b797cf1f66949dd98496ca0ae54d7d35",
-    "version": "7.0.0.GA",
-    "requires": ["jdk"]
-  },
-  "jdk": {
-    "description": "A free and open source implementation of the Java Platform, Standard Edition (Java SE)",
-    "vendor": "Red Hat, Inc.",
-    "modulePath": "model/jdk-install",
-    "targetFolderName": "jdk8",
-    "detectable": true,
     "platform": {
       "win32": {
-        "name": "OpenJDK",
-        "installable": true,
-        "bundle": "yes",
-        "dmUrl": "https://developers.redhat.com/download-manager/jdf/file/java-1.8.0-openjdk-1.8.0.131-1.b11.redhat.windows.x86_64.msi?workflow=direct",
-        "url": "http://download-node-02.eng.bos.redhat.com/brewroot/packages/openjdk8-win/1.8.0.131/1.b11/win/java-1.8.0-openjdk-1.8.0.131-1.b11.redhat.windows.x86_64.msi",
-        "fileName": "java-1.8.0-openjdk-1.8.0.131-1.b11.redhat.windows.x86_64.msi",
-        "sha256sum": "8cad7ee221e5491f73abd422ff25e5ea2ac08e3844df69fdb1dce5af5db08559",
-        "version": "1.8.0_131",
-        "virusTotalReport": "https://virustotal.com/en/file/8cad7ee221e5491f73abd422ff25e5ea2ac08e3844df69fdb1dce5af5db08559/analysis/1493101480/"
+        "url": "https://github.com/kubernetes/kompose/releases/download/v1.0.0/kompose-windows-amd64.exe",
+        "fileName": "kompose-1.0.0.TP-windows-amd64.exe",
+        "sha256sum": "f06c1156cbc427e83e08840fc352639086b142f02ded45c3381f5bc5dd5ee57d"
       },
       "darwin": {
-        "name": "Oracle Java",
-        "installable": false,
-        "bundle": "no",
-        "dmUrl": "http://www.oracle.com/technetwork/java/javase/downloads/index.html",
-        "url": "http://www.oracle.com/technetwork/java/javase/downloads/index.html",
-        "fileName": "",
-        "sha256sum": "",
-        "version": "1.8.0",
-        "virusTotalReport": ""
+        "url": "https://github.com/kubernetes/kompose/releases/download/v1.0.0/kompose-darwin-amd64",
+        "fileName": "kompose-1.0.0.TP-darwin-amd64",
+        "sha256sum": "f987bb6405203379fc9da5903e34a089cb125e14ed10195f25a635c471c0ef97"
       },
       "linux": {
-        "name": "OpenJDK",
-        "bundle": "yes",
-        "installable": true,
-        "dmUrl": "https://developers.redhat.com/download-manager/jdf/file/java-1.8.0-openjdk-1.8.0.131-1.b11.redhat.windows.x86_64.msi?workflow=direct",
-        "url": "http://download-node-02.eng.bos.redhat.com/brewroot/packages/openjdk8-win/1.8.0.131/1.b11/win/java-1.8.0-openjdk-1.8.0.131-1.b11.redhat.windows.x86_64.msi",
-        "fileName": "java-1.8.0-openjdk-1.8.0.131-1.b11.redhat.windows.x86_64.msi",
-        "sha256sum": "8cad7ee221e5491f73abd422ff25e5ea2ac08e3844df69fdb1dce5af5db08559",
-        "version": "1.8.0_131",
-        "virusTotalReport": "https://virustotal.com/en/file/8cad7ee221e5491f73abd422ff25e5ea2ac08e3844df69fdb1dce5af5db08559/analysis/1493101480/"
+        "url": "https://github.com/kubernetes/kompose/releases/download/v1.0.0/kompose-linux-amd64",
+        "fileName": "kompose-1.0.0.TP-linux-amd64",
+        "sha256sum": "ddcd239d497ed55d799f902f98e91ce8a3e89b226384cdc3f6c38f57b16f0582"
       }
+    }
+  },
+  "hyperv": {
+    "name": "Microsoft Hyper-V",
+    "description": "Microsoft Windows Virtualization Platform",
+    "modulePath": "model/hyperv",
+    "installable": false,
+    "detectable": true,
+    "bundle": "no",
+    "url": "https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/",
+    "fileName": "",
+    "sha256sum": "",
+    "version": "",
+    "revision": "112440",
+    "virusTotalReport": "",
+    "vendor": "Microsoft, Inc.",
+    "messages": {
+      "info": {
+        "message": "Follow these steps to install and enable Microsoft Hyper-V on Windows 10",
+        "link": "https://access.redhat.com/documentation/en-us/red_hat_container_development_kit/2.4/html/installation_guide/installing_container_development_kit_on_microsoft_windows#windows-add-sw",
+        "linkDescription": "these steps"
+      }
+    },
+    "platform": {
+      "win32": {}
     }
   },
   "virtualbox": {
@@ -212,6 +262,28 @@ Hash: SHA1
     "bundle": "no",
     "targetFolderName": "virtualbox",
     "installAfter": "jdk",
+    "messages": {
+      "dependency": {
+        "message": "Please uninstall detected Oracle VirtualBox and restart Installer to continue."
+      },
+      "misc": {
+        "vtxDisabledWin": {
+          "message": "Please enable hardware virtualization support in BIOS for your platform.",
+          "type": "error",
+          "isVisible": "process.platform === 'win32' && installerDataSvc.getInstallable('hyperv') && !installerDataSvc.getInstallable('hyperv').isConfigured() && installerDataSvc.getInstallable('virtualbox').virtualizationEnabled === false && (installerDataSvc.getInstallable('cdk').selectedOption == 'install' || installerDataSvc.getInstallable('virtualbox').selectedOption == 'install')"
+        },
+        "vtxDisabledDawin": {
+          "message": "Please enable hardware virtualization for your platform.",
+          "type": "error",
+          "isVisible": "process.platform === 'darwin' && installerDataSvc.getInstallable('virtualbox').virtualizationEnabled === false && (installerDataSvc.getInstallable('cdk').selectedOption == 'install' || installerDataSvc.getInstallable('virtualbox').selectedOption == 'install')"
+        },
+        "vtxUndefined": {
+          "message": "Please make sure hardware virtualization is enabled on your platform if supported.",
+          "type": "warning",
+          "isVisible": "installerDataSvc.getInstallable('hyperv') && !installerDataSvc.getInstallable('hyperv').isConfigured() && installerDataSvc.getInstallable('virtualbox').virtualizationEnabled === undefined && installerDataSvc.getInstallable('cdk').selectedOption == 'install'"
+        }
+      }
+    },
     "platform": {
       "win32": {
         "url": "http://download.virtualbox.org/virtualbox/5.1.24/VirtualBox-5.1.24-117012-Win.exe",
@@ -239,20 +311,21 @@ Hash: SHA1
       }
     }
   },
-  "hyperv": {
-    "name": "Microsoft Hyper-V",
-    "description": "Microsoft Windows Virtualization Platform",
-    "modulePath": "model/hyperv",
-    "installable": false,
+  "cygwin": {
+    "name": "Cygwin",
+    "description": "A distribution of popular GNU and other Open Source tools running on Microsoft Windows",
+    "vendor": "Community Project",
+    "modulePath": "model/cygwin",
+    "installable": true,
     "detectable": true,
-    "bundle": "no",
-    "url": "https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/",
-    "fileName": "",
-    "sha256sum": "",
-    "version": "",
-    "revision": "112440",
-    "virusTotalReport": "",
-    "vendor": "Microsoft, Inc.",
+    "bundle": "always",
+    "targetFolderName": "cygwin",
+    "installAfter": "virtualbox",
+    "url": "https://cygwin.com/setup-x86_64.exe",
+    "fileName": "cygwin_2.8.2.exe",
+    "sha256sum": "062ab45437fed70071dd4cf1c9d6c584f3efbb3d64d60e4cfc4e74fd6b6de214",
+    "version": "2.8.2",
+    "virusTotalReport": "https://virustotal.com/en/file/062ab45437fed70071dd4cf1c9d6c584f3efbb3d64d60e4cfc4e74fd6b6de214/analysis/",
     "platform": {
       "win32": {}
     }
@@ -284,43 +357,15 @@ Hash: SHA1
         "sha256sum": "d65a1d1a050e4fd7912c18468954f64db824a1e1b621235a153d010beae14757"
       }
     }
-  },
-  "kompose": {
-    "name": "Kompose",
-    "description": "A tool to translate a Docker Compose file into Kubernetes or OpenShift resources",
-    "vendor": "Kubernetes Incubator",
-    "modulePath": "model/kompose",
-    "installable": true,
-    "detectable": false,
-    "bundle": "no",
-    "targetFolderName": "kompose",
-    "version": "1.0.0 Technology Preview",
-    "platform": {
-      "win32": {
-        "url": "https://github.com/kubernetes/kompose/releases/download/v1.0.0/kompose-windows-amd64.exe",
-        "fileName": "kompose-1.0.0.TP-windows-amd64.exe",
-        "sha256sum": "f06c1156cbc427e83e08840fc352639086b142f02ded45c3381f5bc5dd5ee57d"
-      },
-      "darwin": {
-        "url": "https://github.com/kubernetes/kompose/releases/download/v1.0.0/kompose-darwin-amd64",
-        "fileName": "kompose-1.0.0.TP-darwin-amd64",
-        "sha256sum": "f987bb6405203379fc9da5903e34a089cb125e14ed10195f25a635c471c0ef97"
-      },
-      "linux": {
-        "url": "https://github.com/kubernetes/kompose/releases/download/v1.0.0/kompose-linux-amd64",
-        "fileName": "kompose-1.0.0.TP-linux-amd64",
-        "sha256sum": "ddcd239d497ed55d799f902f98e91ce8a3e89b226384cdc3f6c38f57b16f0582"
-      }
-    }
   }
 }
 -----BEGIN PGP SIGNATURE-----
 
-iQEcBAEBAgAGBQJZeTLZAAoJEB66Yq5ApDJKrkAH/0ylC9CDz6cxmI+/FxI7c/WY
-ityU+8HbkO2dy0ol5kG5AgmS2ranQMIuPOlYaVKA7WOxtOA2jGIfm4loH/7ZPtAZ
-F3vi69CnmRG0PLY0UyIz8LlVk0Ikij/rvFsIlC7NFmxOZtMBVKOAAJGW6S59NdZf
-Ac0cggnHYWYhLB9l28M5yvh0tfx7vdkJgY6lTW8pLFwn76WOM5qcfNUM+kTrKj2f
-7jQ6vL73ubd+Hr7yP556WDT5vkG+vLRAw0QYrCTS0cxtp0wgrn8Ulgx56KHZjVW3
-VqVQQ0yVG8avv2lUtdnh08UGofOwU6kCAtbP9+91uaYK5TfO5/Lo+t9+2Ue6AzM=
-=srhx
+iQEcBAEBAgAGBQJZgW7HAAoJEB66Yq5ApDJKgn0H/04fx3pobeFoZXwcrat2rvqx
+FuBsSCWX+rViIu68NYdRHRs6ooNTjEEPw6RnaOIZ9id1Gpsn782holTgedUZr06O
+JCJvR+PUpJGjftohGpl8ji+BOpLyrvGmdnMboS40BPp7x/0ZHGCF0uKVfT+9uxvh
+X4hQEbkGniopxc3vwTn9LTzL50Hvyh8RBsiaUhWzfY73NcdXDDlcxiKEQYS0SnWJ
+WvQ+vxtW0rdKdxdpe8pX87wwuTFO5bY590gGcFavmDa9QLU7jp0c79xbFiKts0cO
+lSoyBPB0FPVAkkY+mPTvxJ9dYPFdwv8Pgbj9thygdITkKk1O1C1GiUVEIMa/6Eo=
+=x0vq
 -----END PGP SIGNATURE-----
